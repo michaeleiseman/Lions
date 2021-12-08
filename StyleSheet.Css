@@ -1,0 +1,17 @@
+#box{
+    border: 1px;
+    color: black;
+    width: 100px;
+    padding: auto;
+    height: 100px;
+    border-style: solid;
+    background-color: lightsalmon;
+}
+.heading{
+    text-align: center;
+}
+
+.Body{
+    background-color: lightseagreen;
+
+}
