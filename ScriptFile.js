@@ -1,5 +1,11 @@
 
+var keys = {};
+
+
+
 document.addEventListener("keydown", movementKey, true);
+document.addEventListener("keyup", keyReleased, false);
+
 var canvas = document.createElement("canvas");
 var b = canvas.getContext("2d");
 
@@ -22,11 +28,16 @@ b.fillRect(posX,posY, 30,40)
 
 function movementKey(event){
     console.log(event.key);
+
+    keys[event.which]= true;
+    console.log(keys[event.which]);
+    console.log(event.which);
     
-    if(event.key == "w"){posY-=5}
-    if(event.key == "s"){posY+=5}
-    if(event.key == "a"){posX-=5}
-    if(event.key == "d"){posX+=5}
+    
+    if(keys[87]){posY-=5}
+    if(keys[83]){posY+=5}
+    if(keys[65]){posX-=5}
+    if(keys[68]){posX+=5}
 
 b.fillStyle = "#FF0000";
 b.fillRect(0,0,canvas.width, canvas.height);
@@ -36,5 +47,27 @@ b.fillRect(0,0,canvas.width, canvas.height);
 b.fillStyle = "white";
 b.fillRect(posX,posY, 30,40) 
 
+
+}
+
+function keyReleased(event){
+    console.log(event.key);
+
+    keys[event.which]= false;
+    console.log(keys[event.which]);
+    
+    
+    if(keys[119]){posY-=5}
+    if(keys[115]){posY+=5}
+    if(keys[97]){posX-=5}
+    if(keys[100]){posX+=5}
+
+b.fillStyle = "#FF0000";
+b.fillRect(0,0,canvas.width, canvas.height);
+
+
+
+b.fillStyle = "white";
+b.fillRect(posX,posY, 30,40) 
 
 }
