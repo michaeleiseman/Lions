@@ -1,8 +1,11 @@
 #box{
     border: 1px;
-    color: black;
-    width: 100px;
+    width: 50px;
     padding: auto;
     height: 100px;
+    top:30;
+    left: 400;
     border-style: solid;
+    display: inline-block;
+    position: absolute;
 }
