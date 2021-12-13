@@ -71,3 +71,9 @@ b.fillStyle = "white";
 b.fillRect(posX,posY, 30,40) 
 
 }
+
+b.fillStyle= "white";
+b.fillRect(50,50,40,40)
+
+b.fillStyle= "white";
+b.fillRect(250,50,40,40)
