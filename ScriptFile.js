@@ -82,8 +82,3 @@ function collides(x, y){
     
 
 }
-
-
-
-
-
