@@ -1,26 +1,17 @@
 var posX = 200;
 var posY = 200;
 const keys = {};
-var canvas = document.createElement("canvas");
-var Player = canvas.getContext("2d");
+var Player = document.getElementById("canvas").getContext("2d");
 document.addEventListener("keydown", movementKey, true);
 document.addEventListener("keyup", keyReleased, false);
 const blockMap = new Map();
 
 
 
-canvas.width = 840;
-canvas.height = 840;
 
 
 
-
-
-document.body.appendChild(canvas);
 pupulateMap();
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-
 
 
 Player.fillStyle = "blue";
