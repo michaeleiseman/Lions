@@ -60,12 +60,13 @@ function pupulateMap(){
             if((blockPosX/40)%2==0 && (blockPosY/40)%2==0){
 
             blockMap.set(blockPosX+","+blockPosY,true);
+            
+            console.log(blockPosX+","+blockPosY);
             }else if((blockPosX/40)%2!=0){
                 blockMap.set(blockPosX+","+blockPosY,false);  
             }
 
-            console.log(blockMap.get(blockPosX+","+blockPosY));
-            console.log(blockPosX+","+blockPosY);
+            
         
             blockPosX+=40;
     
