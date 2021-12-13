@@ -9,8 +9,8 @@ const blockMap = new Map();
 
 
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 840;
+canvas.height = 840;
 
 
 
