@@ -1,37 +1,39 @@
-
-var keys = {};
-
-
-
-document.addEventListener("keydown", movementKey, true);
-document.addEventListener("keyup", keyReleased, false);
-
-var canvas = document.createElement("canvas");
-var b = canvas.getContext("2d");
-
-canvas.width = 400;
-canvas.height = 400;
-
-document.body.appendChild(canvas)
-
-b.fillStyle = "#FF0000";
-b.fillRect(0,0,canvas.width, canvas.height);
-
-
 var posX = 200;
 var posY = 200;
+const keys = {};
+var canvas = document.createElement("canvas");
+var Player = canvas.getContext("2d");
+document.addEventListener("keydown", movementKey, true);
+document.addEventListener("keyup", keyReleased, false);
+const blockMap = new Map();
 
-b.fillStyle = "white";
-b.fillRect(posX,posY, 30,40) 
+
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+
+
+
+
+document.body.appendChild(canvas);
+pupulateMap();
+console.log(window.innerWidth);
+console.log(window.innerHeight);
+
+
+
+Player.fillStyle = "blue";
+Player.fillRect(posX,posY, 20,20)
 
 
 
 function movementKey(event){
-    console.log(event.key);
+    Player.clearRect(posX,posY,20,20)
+
 
     keys[event.which]= true;
-    console.log(keys[event.which]);
-    console.log(event.which);
+    
     
     
     if(keys[87]){posY-=5}
@@ -39,35 +41,48 @@ function movementKey(event){
     if(keys[65]){posX-=5}
     if(keys[68]){posX+=5}
 
-b.fillStyle = "#FF0000";
-b.fillRect(0,0,canvas.width, canvas.height);
-
-
-
-b.fillStyle = "white";
-b.fillRect(posX,posY, 30,40) 
-
+    Player.fillStyle = "blue";
+    Player.fillRect(posX,posY,20,20)
 
 }
 
 function keyReleased(event){
-    console.log(event.key);
-
     keys[event.which]= false;
-    console.log(keys[event.which]);
+}
+
+
+function pupulateMap(){
+    blockPosX =0;
+    blockPosY = 0; 
+
+    for(i = 0; i<=20; i++){
+        for(j = 0; j<=20;j++){
+            if((blockPosX/40)%2==0 && (blockPosY/40)%2==0){
+
+            blockMap.set(blockPosX+","+blockPosY,true);
+            }else if((blockPosX/40)%2!=0){
+                blockMap.set(blockPosX+","+blockPosY,false);  
+            }
+
+            console.log(blockMap.get(blockPosX+","+blockPosY));
+            console.log(blockPosX+","+blockPosY);
+        
+            blockPosX+=40;
     
-    
-    if(keys[119]){posY-=5}
-    if(keys[115]){posY+=5}
-    if(keys[97]){posX-=5}
-    if(keys[100]){posX+=5}
-
-b.fillStyle = "#FF0000";
-b.fillRect(0,0,canvas.width, canvas.height);
-
-
-
-b.fillStyle = "white";
-b.fillRect(posX,posY, 30,40) 
+        }
+        blockPosX=0;
+        blockPosY+=40;
+    }
 
 }
+
+function collides(x, y){
+
+    
+
+}
+
+
+
+
+
