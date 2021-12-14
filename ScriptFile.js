@@ -1,8 +1,7 @@
 var posX = 200;
 var posY = 200;
 const keys = {};
-var canvas = document.createElement("canvas");
-var Player = canvas.getContext("2d");
+var Player = document.getElementById("canvas").getContext("2d");
 document.addEventListener("keydown", movementKey, true);
 document.addEventListener("keyup", keyReleased, false);
 const character = document.getElementById("character");
@@ -10,18 +9,10 @@ const blockMap = new Map();
 
 
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 
 
 
-
-
-document.body.appendChild(canvas);
 pupulateMap();
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-
 
 
 Player.drawImage(character, posX, posY, 30, 30);
