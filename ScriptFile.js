@@ -5,6 +5,7 @@ var canvas = document.createElement("canvas");
 var Player = canvas.getContext("2d");
 document.addEventListener("keydown", movementKey, true);
 document.addEventListener("keyup", keyReleased, false);
+const character = document.getElementById("character");
 const blockMap = new Map();
 
 
@@ -23,8 +24,8 @@ console.log(window.innerHeight);
 
 
 
-Player.fillStyle = "blue";
-Player.fillRect(posX,posY, 20,20)
+Player.drawImage(character, posX, posY, 30, 30);
+
 
 
 
