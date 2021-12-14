@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- <html>
+<html>
     
     <head>
         <title>Lions</title>
@@ -8,39 +8,41 @@
     </head>
     <Body>
        
-        <canvas id="canvas" width="840" height="840" style="position: absolute; z-index: 0">
-        </canvas>
-        <canvas id="playableCanvas" width="840" height="840" style="position: absolute; z-index: 1">
-        </canvas>
-              
-          
-    </Body>
-
-    <script src="ScriptFile.js"></script>
-</html> -->
-
-<!DOCTYPE html>
-<html>
-    
-    <head>
-        <title>Lions</title>
-        <link rel="stylesheet" href="StyleSheet.Css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    </head>
-    <body>
+        
         <div class="container-fluid">
             <div class="row" >
               <div class="col-9" >
-                <canvas id="canvas" width="840" height="840"></canvas>
+                <canvas id="canvas" width="840" height="840" style="position: absolute; z-index: 0">
+                </canvas>
+                <canvas id="playableCanvas" width="840" height="840" style="position: absolute; z-index: 1">
+                </canvas>
               </div>
               <div class="col-3" id="grid">
-                <h1>Welcome!!!</h1> <p>By Hunter Robbins, Cecilia Campisi, and Glauk Hizmo. To play this game you will be using the W, S, D, A keys to move around. The objective is to choose one of the two boxes and pick the right one. If you hit the wrong one you will die and lose a life. Try to get as far as you can!!!</p>
+                  <div class = "row">
+                      <div class = "col">
+                        <h1>Welcome!!!</h1> 
+                        <p>By Hunter Robbins, Cecilia Campisi, and Glauk Hizmo. To play this game you will be using the W, S, D, A keys to move around. The objective is to choose one of the two boxes and pick the right one. If you hit the wrong one you will die and lose a life. Try to get as far as you can!!!</p>
+                      </div>
+                    </div>
+                  <div class = "row">
+                      <div class = "col">
+                          <p>Number of lives left: <span id = "livesLeft">3</span></p>
+                          <h1 id = "youWon" style = "visibility: hidden">You won!</h1>
+                          <button id = "initialize" class = "btn-primary">Reset</button>
+                      </div>
+                  </div>
+                  
               </div>
             </div>
            
           </div>
-          <img id = "character" style = "visibility: hidden" src = "player.jpg" >
-    </body>
+
+
+        <img id = "character" style = "visibility: hidden" src = "player.jpg" >
+        
+              
+          
+    </Body>
 
     <script src="ScriptFile.js"></script>
 </html>
