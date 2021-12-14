@@ -5,6 +5,7 @@ var background = document.getElementById('playableCanvas').getContext("2d");
 var Player = document.getElementById("canvas").getContext("2d");
 document.addEventListener("keydown", movementKey, true);
 document.addEventListener("keyup", keyReleased, false);
+const character = document.getElementById("character");
 const blockMap = new Map();
 var w = 20;
 var h = 20;
@@ -18,8 +19,8 @@ var strikeCount = 0;
 pupulateMap();
 
 
-Player.fillStyle = "blue";
-Player.fillRect(posX,posY, 20,20)
+Player.drawImage(character, posX, posY, 30, 30);
+
 
 
 
