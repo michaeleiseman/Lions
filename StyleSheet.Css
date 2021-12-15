@@ -1,48 +1,21 @@
 #grid{
-    background-color: cadetblue;
+    background-color: lightseagreen;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
    ;
 }
 body{
-    background-color:dimgray;
+    background-color:lightseagreen;
 }
 .container{
     position: sticky;
 }
-.Body{
-    background-color: lightseagreen;
-}
 
 
 
 
-.l_box {
-    position: static;
-  top: 8px;
-  left: 16px;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(202, 53, 53);
-  }
 
-  .win_box {
-    position: static;
-  bottom: 8px;
-  left: 16px;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(51, 226, 75);
-  }
 
-  .player_box{
-      position: static;
-      top: 0;
-      bottom: 0;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(116, 116, 116);
 
-  }
-
+  
 

@@ -7,6 +7,10 @@ var img = document.getElementById("character");
 var crate = document.getElementById("crate");
 var badCrate = document.getElementById("badCrate");
 var goodCrate = document.getElementById("goodCrate");
+var stone1 = document.getElementById("stone1");
+var stone1 = document.getElementById("stone2");
+var stone1 = document.getElementById("stone3");
+var stone1 = document.getElementById("stone4");
 
 document.getElementById("initialize").addEventListener("click", initialize, false);
 let arr = [];
@@ -79,8 +83,23 @@ function keyReleased(event){
 
 
 function populateMap(){
-    blockPosX =0;
-    blockPosY = 0; 
+    var f;
+
+    for(i = 0; i < 840; i+=60){
+        for(j = 0; j<840; j+=60){
+             f = Math.floor(Math.random()*(4-1)+1);
+             
+            if(f == 1){
+                background.drawImage(stone1,i,j,60,60);
+            }else if(f == 2){
+                background.drawImage(stone2,i,j,60,60);
+            }else if(f == 3){
+                background.drawImage(stone3,i,j,60,60);
+            }else{
+                background.drawImage(stone4,i,j,60,60);
+            }
+        }
+    }
 
    
    
