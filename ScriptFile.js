@@ -4,6 +4,10 @@ let keys = {};
 var background = document.getElementById('playableCanvas').getContext("2d");
 var Player = document.getElementById("canvas").getContext("2d");
 var img = document.getElementById("character");
+var crate = document.getElementById("crate");
+var badCrate = document.getElementById("badCrate");
+var goodCrate = document.getElementById("goodCrate");
+
 document.getElementById("initialize").addEventListener("click", initialize, false);
 let arr = [];
 var w = 40;
@@ -81,8 +85,8 @@ function populateMap(){
    
    
     for(const block of arr){
-        background.fillStyle = "black";
-        background.fillRect(block.x,block.y, 40,40);
+        
+        background.drawImage(crate,block.x,block.y, 40,40);
     }
 
 }
@@ -93,9 +97,9 @@ function collides(){
             &&posX+w>block.x+10
             &&posY<block.y+20
             &&posY+h>block.y+10){
-                let color = "green";
+                let image = goodCrate;
                 if(block.bad){
-                    color = "blue";
+                    image= badCrate;
                     livesLeft--;
                     document.getElementById("livesLeft").textContent = livesLeft;
                     if(livesLeft == 0){
@@ -109,8 +113,8 @@ function collides(){
                     document.removeEventListener("keydown",movementKey,false);
                     document.removeEventListener("keyup",keyReleased,false);
                 }
-            background.fillStyle = color;
-            background.fillRect(block.x,block.y, 40,40);
+            
+            background.drawImage(image,block.x,block.y, 40,40);
             block.notYetHit = false;
         }
     }
