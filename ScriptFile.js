@@ -8,9 +8,9 @@ var crate = document.getElementById("crate");
 var badCrate = document.getElementById("badCrate");
 var goodCrate = document.getElementById("goodCrate");
 var stone1 = document.getElementById("stone1");
-var stone1 = document.getElementById("stone2");
-var stone1 = document.getElementById("stone3");
-var stone1 = document.getElementById("stone4");
+var stone2 = document.getElementById("stone2");
+var stone3 = document.getElementById("stone3");
+var stone4 = document.getElementById("stone4");
 
 document.getElementById("initialize").addEventListener("click", initialize, false);
 let arr = [];
@@ -67,7 +67,7 @@ function movementKey(event){
     
     
     if(keys[87]){posY=Math.max(0,posY-10)}
-    if(keys[83]){posY=Math.min(840-h, posY+10)}
+    if(keys[83]){posY=Math.min(660-h, posY+10)}
     if(keys[65]){posX=Math.max(0,posX-10)}
     if(keys[68]){posX=Math.min(840-w, posX+10)}
     collides();
@@ -86,7 +86,7 @@ function populateMap(){
     var f;
 
     for(i = 0; i < 840; i+=60){
-        for(j = 0; j<840; j+=60){
+        for(j = 0; j<660; j+=60){
              f = Math.floor(Math.random()*(4-1)+1);
              
             if(f == 1){
@@ -145,8 +145,8 @@ function collides(){
 function giveCoordinate(){
     
 for(i = 0; i<=10; i++){
-    var x = Math.random()*(600-40)+40;
-    var y = Math.random()*(600-40)+40;
+    var x = Math.random()*(620-40)+40;
+    var y = Math.random()*(620-40)+40;
     for(const block of exist){
         if(block.x == x && block.y == y || Math.abs(block.x-x)<40 && Math.abs(block.y-y)<40){
             x=block.x+40;
