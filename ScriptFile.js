@@ -24,7 +24,7 @@ function initialize(){
     keys = {}
     exist = [];
     background.clearRect(0,0,840,840);
-    Player.clearRect(0,0,840,840)
+    Player.clearRect(0,0,840,840);
     posX = 200;
     posY = 200;
     livesLeft = 3;
@@ -87,7 +87,7 @@ function populateMap(){
 
     for(i = 0; i < 840; i+=60){
         for(j = 0; j<660; j+=60){
-             f = Math.floor(Math.random()*(4-1)+1);
+             f = Math.floor(Math.random()*(5-1)+1);
              
             if(f == 1){
                 background.drawImage(stone1,i,j,60,60);
@@ -125,7 +125,7 @@ function collides(){
                         document.removeEventListener("keydown",movementKey,false);
                         document.removeEventListener("keyup",keyReleased,false);
                         
-                        
+                
                     }
                 }else{
                     document.getElementById("youWon").style.setProperty("visibility","visible")
