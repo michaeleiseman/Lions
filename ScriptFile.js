@@ -28,6 +28,7 @@ function initialize(){
     posX = 200;
     posY = 200;
     livesLeft = 3;
+    document.getElementById("livesLeft").textContent = livesLeft;
 
     document.getElementById("youWon").style.setProperty("visibility","hidden")
 
