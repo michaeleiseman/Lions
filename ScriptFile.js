@@ -9,10 +9,13 @@ let arr = [];
 var w = 40;
 var h = 40;
 var livesLeft;
+let exist = [];
 
 initialize();
 function initialize(){
     keys = {}
+    exist = [];
+    background.clearRect(0,0,840,840);
     Player.clearRect(0,0,840,840)
     posX = 200;
     posY = 200;
@@ -23,11 +26,19 @@ function initialize(){
     document.addEventListener("keydown", movementKey, false);
     document.addEventListener("keyup", keyReleased, false);
 
+    giveCoordinate();
+
     arr = [
-        {x: 30, y: 40, notYetHit: true, bad: true},
-        {x: 120, y: 40, notYetHit: true, bad: true},
-        {x: 34, y: 200, notYetHit: true, bad: true},
-        {x: 523, y: 620, notYetHit: true, bad: false}
+        {x: exist[0].x, y:  exist[0].y, notYetHit: true, bad: true},
+        {x: exist[1].x, y:  exist[1].y, notYetHit: true, bad: true},
+        {x: exist[2].x, y:  exist[2].y, notYetHit: true, bad: true},
+        {x: exist[3].x, y:  exist[3].y, notYetHit: true, bad: false},
+        {x: exist[4].x, y:  exist[4].y, notYetHit: true, bad: true},
+        {x: exist[5].x, y:  exist[5].y, notYetHit: true, bad: true},
+        {x: exist[6].x, y:  exist[6].y, notYetHit: true, bad: true},
+        {x: exist[7].x, y:  exist[7].y, notYetHit: true, bad: true},
+        {x: exist[8].x, y:  exist[8].y, notYetHit: true, bad: true},
+        {x: exist[9].x, y:  exist[9].y, notYetHit: true, bad: true}
     ]
 
     populateMap();
@@ -47,7 +58,7 @@ function movementKey(event){
     
     
     
-    if(keys[87]){posY = Math.max(0,posY-10)}
+    if(keys[87]){posY=Math.max(0,posY-10)}
     if(keys[83]){posY=Math.min(840-h, posY+10)}
     if(keys[65]){posX=Math.max(0,posX-10)}
     if(keys[68]){posX=Math.min(840-w, posX+10)}
@@ -105,6 +116,29 @@ function collides(){
     }
     
 
+}
+
+
+function giveCoordinate(){
+    
+for(i = 0; i<=10; i++){
+    var x = Math.random()*(600-40)+40;
+    var y = Math.random()*(600-40)+40;
+    for(const block of exist){
+        if(block.x == x && block.y == y || Math.abs(block.x-x)<40 && Math.abs(block.y-y)<40){
+            x=block.x+40;
+            y=block.y+40;
+            for(const block of exist){
+                if(block.x == x && block.y == y || Math.abs(block.x-x)<40 && Math.abs(block.y-y)<40){
+                    x=block.x+40;
+                    y=block.y-40;
+                }
+            }
+        } 
+    }
+    exist.push({x: x, y:y});
+
+ }
 }
 
 
